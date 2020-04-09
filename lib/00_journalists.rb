@@ -25,13 +25,13 @@ def handle_with_aude
 end
 
 def majuscule
-  hwm = handle_twitter_array.scan(/[^A-^Z]/)
+  hwm = handle_twitter_array.grep(/^(@[A-Z])/)
   puts "il y a #{hwm.length} email(s) qui commence(nt) par une majuscule juste après @"
 end
 
 def maj
 
-  hwmj = handle_twitter_array.grep(/A/)
+  hwmj = handle_twitter_array.grep(/[A-Z]/)
   puts "il y a #{hwmj.length} emails qui contiennent une majuscule"
 
 end
@@ -63,8 +63,8 @@ def perform
   number_of_journalists
   handle_with_number
   handle_with_aude
-  #majuscule
-  #maj
+  majuscule
+  maj
   underscore
   alphabetical_order
   shorter
